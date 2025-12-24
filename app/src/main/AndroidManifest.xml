@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.anantatech.mitranusamba"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Poin Nusamba"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MemberNusamba"
+        tools:targetApi="31">
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- SplashActivity menjadi launcher utama -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LoginActivity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="LogIn"/>
+
+        <!-- Halaman utama member -->
+        <activity
+            android:name=".HomeMemberActivity"
+            android:exported="false"
+            android:label="Beranda"/>
+
+        <!-- Halaman berita promo -->
+        <activity
+            android:name=".BeritaActivity"
+            android:exported="false"
+            android:label="Berita"/>
+
+        <!-- Halaman poin member -->
+        <activity
+            android:name=".PoinActivity"
+            android:exported="false"
+            android:label="Poin"/>
+
+        <!-- Halaman utama admin -->
+        <activity
+            android:name=".HomeAdminActivity"
+            android:exported="false"
+            android:label="Beranda Admin" />
+
+        <!-- Halaman admin poin -->
+        <activity
+            android:name=".AdminPoinActivity"
+            android:exported="false"
+            android:label="Admin Poin" />
+    </application>
+
+</manifest>
